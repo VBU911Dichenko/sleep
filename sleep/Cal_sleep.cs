@@ -9,7 +9,7 @@ namespace sleep
     class Cal_sleep
     {
         public List<DateTime> rezult { get; set; }
-        public double time_sleep { get; set; }
+       // public double time_sleep { get; set; }
         DateTime now { get; set; }
         DateTime up { get; set; }
         double interval;
@@ -19,14 +19,14 @@ namespace sleep
             interval = 1.5;
         }
         private void Set_Date() => now = DateTime.Now;
-        public List<DateTime> Calculating()
+        public void Calculating(int time_sleep)
         {
             Set_Date();
             up = now.AddDays(time_sleep);
-            int q = up.Subtract(now).Hours;
+            
 
 
-            return rezult;
+          
         }
 
     }
