@@ -8,25 +8,22 @@ namespace sleep
 {
     class Cal_sleep
     {
-        public List<DateTime> rezult { get; set; }
-       // public double time_sleep { get; set; }
+        public string rezult { get; set; }      
         DateTime now { get; set; }
         DateTime up { get; set; }
         double interval;
-        public Cal_sleep()
+        public Cal_sleep() {  interval = 1.5; rezult = $"Заведите будильник на это время: "; }
+       
+        public string Calculating(int horse_sleep)
         {
-            rezult = new List<DateTime>();
-            interval = 1.5;
-        }
-        private void Set_Date() => now = DateTime.Now;
-        public void Calculating(int time_sleep)
-        {
-            Set_Date();
-            up = now.AddDays(time_sleep);
-            
-
-
-          
+            now = DateTime.Now;
+            for (int i = 0; i < horse_sleep; i++)
+            {
+                now.AddDays(interval);
+                rezult += $"({now.Hour}:{now.Minute})\t";
+            }
+           
+            return rezult;
         }
 
     }
