@@ -18,12 +18,13 @@ namespace sleep
             rezult = new List<DateTime>();
             interval = 1.5;
         }
-        public void Set_Date() => now = DateTime.Now;
+        private void Set_Date() => now = DateTime.Now;
         public List<DateTime> Calculating()
         {
-            
             Set_Date();
             up = now.AddDays(time_sleep);
+            int q = up.Subtract(now).Hours;
+
 
             return rezult;
         }
